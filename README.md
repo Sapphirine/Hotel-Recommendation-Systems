@@ -1,3 +1,4 @@
+
 # Hotel-Recommendation-Systems
 
 Columbia University E6893 Big Data Analytics final project: Hotel Recommendation Systems
@@ -23,4 +24,12 @@ To run the python code first follow the instruction in GitHub to install the pyw
 "xgboost," [Online]. Available: https://github.com/dmlc/xgboost.
 
 ## Code
+### project.py
 In the project.py file, first we import all libraries and show a simple example of applying Factorization Machine as well as the data structure. Then we do data pre-processing work and divide the data set into train set and test set. The following parts are applying Model I (Random Forest + Popularity Ranking)and Model II (Factorization Machine + XGBoost).
+
+### UI 
+If you want to know more about our project, you can open ui-typography.html and
+then you can use the website to see our projects. The website includes four parts. The ui-typography.html is the overview part and
+home page. The data part includes two part: data overview (table.html) and
+descriptive analysis charts (activity.html). The model part includes two parts:
+Model1 (rf.html) and Model 2(xg.html) and The conclusion part is the message.html.
