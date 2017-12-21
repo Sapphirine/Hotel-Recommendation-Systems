@@ -10,6 +10,7 @@ import xgboost as xgb
 import numpy as np
 import pandas as pd
 import ml_metrics as metrics
+from sklearn.decomposition import PCA
 from sklearn import cross_valiadation
 from sklearn.ensemble import RandomForestClassifier
 # set environment varibale in Ubuntu 
@@ -42,8 +43,6 @@ print(model.weights)
 
 
 # Data preprocessing
-import pandas as pd
-from sklearn.decomposition import PCA
 
 # A small data test 
 #n=20000
@@ -134,7 +133,7 @@ def popularity_ranking(file_path):
     # define the dataframe
     data = pd.read_csv(file_path, dtype={'is_booking': bool, 'srch_distination': np.int32,
                                          'hotel_cluster': np.int32}, usecols=['srch_distination_id', 'is_booking',
-                                                                              hotel_cluster], chunksize=1000000)
+                                                                            'hotel_cluster'], chunksize=1000000)
 
     # read the data in chunk
     aggs = []
@@ -162,12 +161,12 @@ def popularity_ranking(file_path):
     return most_pop
 
 # Combine the two models above
-def model_1(srch_id_list, most_pop, predictions, thres_probability=0.345):
+def model_1(srch_id_list, most_pop, predictions, thres_probability=0.29):
     # combine random_forest and popularity ranking
-    predictions = []
+    pred = []
 
     for i in range(len(predictions)):
-        rf_list = list((np.argsort(predictions[i])[::-1][:len(np.where(predictions[i] > thres)[0])]))
+        rf_list = list((np.argsort(predictions[i])[::-1][:len(np.where(predictions[i] > thres_probability)[0])]))
 
         srch_id = srch_id_list[i]
         pr_list = []
@@ -189,9 +188,9 @@ def model_1(srch_id_list, most_pop, predictions, thres_probability=0.345):
         else:
             rf_list = rf_list[:5]
 
-        predictions.append(rf_list)
+        pred.append(rf_list)
 
-    return predictions
+    return pred
 
 
 def get_accuracy(predictions, test_data):
@@ -310,13 +309,13 @@ preds = model.predict(xgb_val,ntree_limit=model.best_ntree_limit)
 
 # Final results and accuracy
 result = []
-for i in range(n-nn):
+for i in range(len(df_test)):
     result.append([preds[i*100+j] for j in range(100)])
 
 predictions = []
 for x in result:
     predictions.append(np.argsort(x)[::-1][:5])
 
-target = [[x] for x in df['hotel_cluster'][nn:]]
+target = [[x] for x in df_test['hotel_cluster']]
 metrics.mapk(target, predictions, k=5)
 
