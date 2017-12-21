@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Expedia</title>
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="css/theme.css" rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+</head>
+<body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+					<i class="icon-reorder shaded"></i>
+				</a>
+
+			  	<a class="brand" href="ui-typography.html">
+			  		Expedia
+			  	</a>
+
+				<div class="nav-collapse collapse navbar-inverse-collapse">			
+					<ul class="nav pull-right">
+						<li><a href="#">
+							Team Member
+						</a></li>
+						<li class="nav-user dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/user.png" class="nav-avatar" />
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Qiang Fei</a></li>
+								<li><a href="#">Audery Lee</a></li>
+								<li><a href="#">Yihao Lin</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.nav-collapse -->
+			</div>
+		</div><!-- /navbar-inner -->
+	</div><!-- /navbar -->
+
+
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+
+						<ul class="widget widget-menu unstyled">
+							<li class="active">
+								<a href="ui-typography.html">
+									<i class="menu-icon icon-dashboard"></i>Overview
+								</a>
+							</li>
+
+							<li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Data</a>
+                                    <ul id="togglePages" class="collapse unstyled">
+                                        <li><a href="table.html"><i class="icon-inbox"></i><h3>Overview</h3></a></li>
+                                        <li><a href="activity.html"><i class="icon-inbox"></i><h3>Charts</h3></a></li>
+                                    </ul>
+                            </li>
+
+
+                            <li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-cog">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Model</a>
+                                <ul id="togglePages1" class="collapse unstyled">
+                                    <li><a href="rf.html"><i class="icon-inbox"></i><h3>Model 1</h3></a></li>
+                                    <li><a href="xg.html"><i class="icon-inbox"></i><h3>Model 2</h3></a></li>
+                                    <li><a href="fm.html"><i class="icon-inbox"></i><h3>Factorization Machine</h3></a></li>
+                                    <li><a href="pr.html"><i class="icon-inbox"></i><h3>Popularity Ranking</h3></a></li>
+                                </ul>
+                            </li>
+
+
+
+							<li>
+								<a href="message.html"><i class="menu-icon icon-bullhorn"></i>Conclusions
+								</a>
+							</li>
+						</ul>
+						<!--/.widget-nav-->
+					</div><!--/.sidebar-->
+				</div><!--/.span3-->
+
+
+				<div class="span9">
+					<div class="content">
+
+						<div class="module">
+							<!--<div class="module-head">
+								<h3>News Feed</h3>
+							</div>-->
+							<div class="module-body">
+								<h1 style="text-align: center;">Random Forest</h1>
+								<div>
+									<div class="media stream">
+										<div class="media-body">
+											<div class="stream-headline">
+												<div class="stream-text">
+													<!--<<h2>Introduction</h2>-->
+													<p>
+													<h4 style="font-size:15px">
+														Random forest is an ensemble learning method that is applicable for both regression and classification problems. By randomly selecting a given number of features each time, comparing to simple tree-based methods, random forest can reduce variance and decorrelates trees. In this case, random forest is a good choice on our dataset, which consists of 25 variables.
+													</h4>
+													</p>
+                                                </div>
+											</div><!--/.stream-headline-->
+										</div>
+									</div><!--/.media .stream-->
+
+									<div class="media stream">
+										<div class="media-body">
+											<div class="stream-headline">
+												<div class="stream-text">
+													<h2>Importance Table</h2>
+                                                </div>
+
+                                                <div class="stream-attachment photo" style="width:850px">
+													<div class="responsive-photo" style="width:800px">
+														<table>
+															<tr>
+																<td style="font-size: 20px"><img src="images/importance.jpg"/></td>
+															</tr>
+														</table>
+													</div>
+												</div>
+
+
+											</div><!--/.stream-headline-->
+										</div>
+									</div><!--/.media .stream-->
+
+
+								</div>
+
+								</div><!--/.stream-list-->
+							</div><!--/.module-body-->
+						</div><!--/.module-->
+
+
+						<div class="module">
+							<!--<div class="module-head">
+								<h3>News Feed</h3>
+							</div>-->
+							<div class="module-body">
+								<h1 style="text-align: center;">Popular Ranking</h1>
+								<div>
+									<div class="media stream">
+										<div class="media-body">
+											<div class="stream-headline">
+												<div class="stream-text">
+													<!--<<h2>Introduction</h2>-->
+													<p>
+													<h4 style="font-size:15px">
+														The popularity ranking algorithm is based on a simple logic that if we assume travelers share similar preference, the best recommendations we can make is to choose the most popular hotels in the area. With the algorithm, we count the bookings of each hotel and rank the hotels in each area by number of booking. For each search, we present the top five most popular hotels in the customer destination.
+													</h4>
+													</p>
+													<h4 style="font-size:15px">
+													<p>
+														Popularity = the number of booking + click weight (0.05) * the number of click	
+													</p> 
+                                                </div>
+											</div><!--/.stream-headline-->
+										</div>
+									</div><!--/.media .stream-->
+
+									<div class="media stream">
+										<div class="media-body">
+											<div class="stream-headline">
+												<div class="stream-text">
+													<h2>Final Data Table</h2>
+												</div>
+
+                                                <div class="stream-attachment photo" style="width:850px">
+                                                	<div class="module-body table">
+													<table cellpadding="0" cellspacing="0" border="0" class="table-striped" width="100%">
+														<thead>
+															<tr>
+																<th>Data/Variable Name</th>
+																<th>srch_destination_id</th>
+																<th>hotel_cluster</th>
+																<th>bookings</th>
+																<th>clicks</th>
+																<th>popularity</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>Data1</td>
+																<td>0</td>
+																<td>3</td>
+																<td class="center">0.0</td>
+																<td class="center">2.0</td>
+																<td class="center">0.10</td>
+															</tr>
+															<tr>
+																<td>Data2</td>
+																<td>1</td>
+																<td>20</td>
+																<td class="center">4.0</td>
+																<td class="center">22.0</td>
+																<td class="center">5.10</td>
+															</tr>
+															<tr>
+																<td>Data3</td>
+																<td>1</td>
+																<td>30</td>
+																<td class="center">2.0</td>
+																<td class="center">20.0</td>
+																<td class="center">3.00</td>
+															</tr>
+															<tr>
+																<td>Data4</td>
+																<td>1</td>
+																<td>57</td>
+																<td class="center">0.0</td>
+																<td class="center">1.0</td>
+																<td class="center">0.05</td>
+															</tr>
+															<tr>
+																<td>Data5</td>
+																<td>1</td>
+																<td>60</td>
+																<td class="center">0.0</td>
+																<td class="center">17.0</td>
+																<td class="center">0.85</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											</div><!--/.stream-headline-->
+											<h4 style="font-size:15px">
+												<p>
+													We achieved an accuracy rate of 0.345 by using random forest.	
+												</p>
+											</h4>
+										</div>
+									</div><!--/.media .stream-->
+
+
+								</div>
+
+								</div><!--/.stream-list-->
+							</div><!--/.module-body-->
+						</div><!--/.module-->
+
+
+						
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+
+	<div class="footer">
+		<div class="container">
+			<b class="copyright">&copy; 2017 Happy - Dinosaur </b>All rights reserved.
+		</div>
+	</div>
+
+	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+</body>

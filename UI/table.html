@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Expedia</title>
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link type="text/css" href="css/theme.css" rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
+	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+</head>
+<body>
+
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<!--<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+					<i class="icon-reorder shaded"></i>
+				</a>-->
+			  	<a class="brand" href="ui-typography.html">
+			  		Expedia
+			  	</a>
+
+				<div class="nav-collapse collapse navbar-inverse-collapse">
+					<ul class="nav pull-right">						
+						<li><a href="#">
+							Team Member
+						</a></li>
+						<li class="nav-user dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="images/user.png" class="nav-avatar" />
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Qiang Fei</a></li>
+								<li><a href="#">Audrey Lee</a></li>
+								<li><a href="#">Yihao Lin</a></li>
+								<!--<li class="divider"></li>
+								<li><a href="#">Logout</a></li>-->
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.nav-collapse -->
+			</div>
+		</div><!-- /navbar-inner -->
+	</div><!-- /navbar -->
+
+
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+
+						<ul class="widget widget-menu unstyled">
+							<li class="active">
+								<a href="ui-typography.html">
+									<i class="menu-icon icon-dashboard"></i>
+									Overview
+								</a>
+							</li>
+
+							 <li><a class="collapsed" data-toggle="collapse" href="#togglePages"><i class="menu-icon icon-cog">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Data</a>
+                                    <ul id="togglePages" class="collapse unstyled">
+                                        <li><a href="table.html"><i class="icon-inbox"></i><h3>Overview</h3></a></li>
+                                        <li><a href="activity.html"><i class="icon-inbox"></i><h3>Charts</h3></a></li>
+                                    </ul>
+                                </li>
+
+							<li><a class="collapsed" data-toggle="collapse" href="#togglePages1"><i class="menu-icon icon-cog">
+                                </i><i class="icon-chevron-down pull-right"></i><i class="icon-chevron-up pull-right">
+                                </i>Model</a>
+                                <ul id="togglePages1" class="collapse unstyled">
+                                    <li><a href="rf.html"><i class="icon-inbox"></i><h3>Model 1</h3></a></li>
+                                    <li><a href="xg.html"><i class="icon-inbox"></i><h3>Model 2</h3></a></li>
+                                </ul>
+                            </li>
+
+							<li>
+								<a href="message.html">
+								<i class="menu-icon icon-bullhorn"></i>Conclusions
+								</a>
+							</li>
+						</ul><!--/.widget-nav-->
+
+					</div><!--/.sidebar-->
+				</div><!--/.span3-->
+
+
+				<div class="span9">
+					<div class="content">
+
+						<div class="module">
+							<div class="module-head">
+								<h3>Description of Data Variables</h3>
+							</div>
+							<div class="module-body">
+								<p>
+									<strong>USERS INFO</strong>
+									<!--<small>table class="table"</small>-->
+								</p>
+								<table class="table table-striped">
+								  <thead>
+									<tr>
+									  <th>#</th>
+									  <th>Variable Name</th>
+									  <th>Data Type</th>
+									  <th>Description</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Date_time</td>
+									  <td>String</td>
+									  <td>Timestamp</td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <td>Site_name</td>
+									  <td>int</td>
+									  <td>ID of the Expedia point of sale</td>
+									</tr>
+									<tr>
+									  <td>3</td>
+									  <td>Posa_cotinent</td>
+									  <td>Int</td>
+									  <td>ID of continent associated with site_name</td>
+									</tr>
+									<tr>
+									  <td>4</td>
+									  <td>User_location_country</td>
+									  <td>Int</td>
+									  <td>ID of continent associated with site_name</td>
+									</tr>
+									<tr>
+									  <td>5</td>
+									  <td>User_location_region</td>
+									  <td>Int</td>
+									  <td>The ID of the region the customer is located</td>
+									</tr>
+									<tr>
+									  <td>6</td>
+									  <td>User_location_city</td>
+									  <td>Int</td>
+									  <td>The ID of the city the customer is located</td>
+									</tr>
+									<tr>
+									  <td>7</td>
+									  <td>User_id</td>
+									  <td>Int</td>
+									  <td>ID of user</td>
+									</tr>
+									<tr>
+									  <td>8</td>
+									  <td>Is_mobile</td>
+									  <td>Tinyint</td>
+									  <td>1 when a user connected from a mobile device,0 otherwise</td>
+									</tr>
+									<tr>
+									  <td>9</td>
+									  <td>Is_package</td>
+									  <td>Int</td>
+									  <td>1 if the click/booking was generated as a part of a package,0 otherwise</td>
+									</tr>
+									<tr>
+									  <td>10</td>
+									  <td>Channel</td>
+									  <td>Int</td>
+									  <td>ID of a marketing channel</td>
+									</tr>
+									<tr>
+									  <td>11</td>
+									  <td>Cnt</td>
+									  <td>Bigint</td>
+									  <td>Numer of similar events in the context of the same user session</td>
+									</tr>
+									<tr>
+									  <td>12</td>
+									  <td>Hotel_cluster</td>
+									  <td>Int</td>
+									  <td>ID of a hotel cluster</td>
+									</tr>
+								  </tbody>
+								</table>
+
+								<br />
+								<!-- <hr /> -->
+								<br />
+
+								<p>
+									<strong>TRIP DETAILS</strong>
+									<!--<small>table class="table table-striped"</small>-->
+								</p>
+								<table class="table table-striped">
+								  <thead>
+									<tr>
+									  <th>#</th>
+									  <th>Variable Name</th>
+									  <th>Data Type</th>
+									  <th>Description</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Orig_destination_distance</td>
+									  <td>Double</td>
+									  <td>Physical distance between a hotel and a customer at the time of search.</td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <td>Srch_ci</td>
+									  <td>String</td>
+									  <td>Checkin date</td>
+									</tr>
+									<tr>
+									  <td>3</td>
+									  <td>Srch_co</td>
+									  <td>String</td>
+									  <td>Checkout date</td>
+									</tr>
+
+									<tr>
+									  <td>4</td>
+									  <td>Srch_adults_cnt</td>
+									  <td>Int</td>
+									  <td>The number of adults specified in the hotel room
+									  </td>
+									</tr>
+									<tr>
+									  <td>5</td>
+									  <td>Srch_children_cnt</td>
+									  <td>Int</td>
+									  <td>The number of (extra occupancy) children specified in the hotel room</td>
+									</tr>
+									<tr>
+									  <td>6</td>
+									  <td>Srch_rm_cnt</td>
+									  <td>Int</td>
+									  <td>The number of hotel rooms specified in the search</td>
+									</tr>
+									<tr>
+									  <td>7</td>
+									  <td>Srch_destination_id</td>
+									  <td>Int</td>
+									  <td>ID of the destination where the hotel search was performed</td>
+									</tr>
+									<tr>
+									  <td>8</td>
+									  <td>Srch_destination_type_id</td>
+									  <td>Int</td>
+									  <td>Type of destination</td>
+									</tr>
+								  </tbody>
+								</table>
+
+								<br />
+								<!-- <hr /> -->
+								<br />
+
+								<p>
+									<strong>HOTEL INFO</strong>
+									<!--<small>table class="table table-bordered"</small>-->
+								</p>
+								<table class="table table-striped">
+								  <thead>
+									<tr>
+									  <th>#</th>
+									  <th>Variable Name</th>
+									  <th>Data Type</th>
+									  <th>Description</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Hotel_continent</td>
+									  <td>Int</td>
+									  <td>Hotel continent</td>
+									</tr>
+									<tr>
+									  <td>2</td>
+									  <td>Hotel_country</td>
+									  <td>Int</td>
+									  <td>Hotel country</td>
+									</tr>
+									<tr>
+									  <td>3</td>
+									  <td>Hotel_market</td>
+									  <td>Int</td>
+									  <td>Hotel market</td>
+									</tr>
+								  </tbody>
+								</table>
+
+								<br />
+								<!-- <hr /> -->
+								<br />
+
+								<p>
+									<strong>DECISION</strong>
+									<!--<small>table class="table table-condensed"</small>-->
+								</p>
+								<table class="table table-striped">
+								  <thead>
+									<tr>
+									  <th>#</th>
+									  <th>Variable Name</th>
+									  <th>Data Type</th>
+									  <th>Description</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <td>1</td>
+									  <td>Is_booking</td>
+									  <td>Tinyint</td>
+									  <td>1 if a booking, 0 if a click</td>
+									</tr>
+								  </tbody>
+								</table>
+								<br>
+							</div>
+						</div>
+
+						<div class="module">
+							<div class="module-head">
+								<h3>Dataset At A Glance</h3>
+							</div>
+							<div class="module-body table">
+								<table cellpadding="0" cellspacing="0" border="0" class="table-striped" width="100%">
+									<thead>
+										<tr>
+											<th>Variable Name/Data</th>
+											<th>Entry 1</th>
+											<th>Entry 2</th>
+											<th>Entry 3</th>
+											<th>Entry 4</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>date_time</td>
+											<td>2014-08-11 07:46:59</td>
+											<td>2014-08-09 18:08:18</td>
+											<td class="center">2014-07-16 09:42:23</td>
+											<td class="center">2014-07-16 09:55:24</td>
+										</tr>
+										<tr>
+											<td>site_name</td>
+											<td>2</td>
+											<td>2</td>
+											<td class="center">2</td>
+											<td class="center">2</td>
+										</tr>
+										<tr class="gradeA">
+											<td>posa_continent</td>
+											<td>3</td>
+											<td>3</td>
+											<td class="center">3</td>
+											<td class="center">3</td>
+										</tr>
+										<tr class="gradeA">
+											<td>user_location_country</td>
+											<td>66</td>
+											<td>66</td>
+											<td class="center">66</td>
+											<td class="center">66</td>
+										</tr>
+										<tr class="gradeA">
+											<td>user_location_region</td>
+											<td>348</td>
+											<td>442</td>
+											<td class="center">189</td>
+											<td class="center">189</td>
+										</tr>
+										<tr class="gradeA">
+											<td>user_location_city</td>
+											<td>48862</td>
+											<td>35390</td>
+											<td class="center">10067</td>
+											<td class="center">10067</td>
+										</tr>
+										<tr class="gradeA">
+											<td>orig_destination_distance</td>
+											<td>2234.26</td>
+											<td>913.626</td>
+											<td class="center">NaN</td>
+											<td class="center">NaN</td>
+										</tr>
+										<tr class="gradeA">
+											<td>user_id</td>
+											<td>12</td>
+											<td>93</td>
+											<td class="center">501</td>
+											<td class="center">501</td>
+										</tr>
+										<tr class="gradeA">
+											<td>is_mobile</td>
+											<td>0</td>
+											<td>0</td>
+											<td class="center">0</td>
+											<td class="center">0</td>
+										</tr>
+										<tr class="gradeA">
+											<td>is_package</td>
+											<td>1</td>
+											<td>0</td>
+											<td class="center">0</td>
+											<td class="center">0</td>
+										</tr>
+										<tr class="gradeA">
+											<td>channel</td>
+											<td>9</td>
+											<td>3</td>
+											<td class="center">2</td>
+											<td class="center">2</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_ci</td>
+											<td>2014-08-27</td>
+											<td>2014-11-23</td>
+											<td class="center">2014-08-01</td>
+											<td class="center">2014-08-01</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_co</td>
+											<td>2014-08-31</td>
+											<td>2014-11-28</td>
+											<td class="center">2014-08-02</td>
+											<td class="center">2014-08-02</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_adults_cnt</td>
+											<td>2</td>
+											<td>2</td>
+											<td class="center">2</td>
+											<td class="center">2</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_children_cnt</td>
+											<td>0</td>
+											<td>0</td>
+											<td class="center">0</td>
+											<td class="center">0</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_rm_cnt</td>
+											<td>1</td>
+											<td>1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_destination_id</td>
+											<td>8250</td>
+											<td>14984</td>
+											<td class="center">8267</td>
+											<td class="center">8267</td>
+										</tr>
+										<tr class="gradeA">
+											<td>srch_destination_type_id</td>
+											<td>1</td>
+											<td>1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+										</tr>
+										<tr class="gradeA">
+											<td>is_booking</td>
+											<td>0</td>
+											<td>0</td>
+											<td class="center">0</td>
+											<td class="center">0</td>
+										</tr>
+										<tr class="gradeA">
+											<td>cnt</td>
+											<td>3</td>
+											<td>1</td>
+											<td class="center">2</td>
+											<td class="center">1</td>
+										</tr>
+										<tr class="gradeA">
+											<td>hotel_continent</td>
+											<td>2</td>
+											<td>2</td>
+											<td class="center">2</td>
+											<td class="center">2</td>
+										</tr>
+										<tr class="gradeA">
+											<td>hotel_country</td>
+											<td>50</td>
+											<td>50</td>
+											<td class="center">50</td>
+											<td class="center">50</td>
+										</tr>
+										<tr class="gradeA">
+											<td>hotel_market</td>
+											<td>628</td>
+											<td>1457</td>
+											<td class="center">675</td>
+											<td class="center">675</td>
+										</tr>
+										<tr class="gradeA">
+											<td>hotel_cluster</td>
+											<td>1</td>
+											<td>21</td>
+											<td class="center">41</td>
+											<td class="center">70</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th>Variable Name/Data</th>
+											<th>Entry 1</th>
+											<th>Entry 2</th>
+											<th>Entry 3</th>
+											<th>Entry 4</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div><!--/.module-->
+
+					<br />
+						
+					</div><!--/.content-->
+				</div><!--/.span9-->
+			</div>
+		</div><!--/.container-->
+	</div><!--/.wrapper-->
+
+	<div class="footer">
+		<div class="container">
+			<b class="copyright">&copy; 2017 Happy - Dinosaur </b>All rights reserved.
+		</div>
+	</div>
+
+	<script src="scripts/jquery-1.9.1.min.js"></script>
+	<script src="scripts/jquery-ui-1.10.1.custom.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="scripts/datatables/jquery.dataTables.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.datatable-1').dataTable();
+			$('.dataTables_paginate').addClass("btn-group datatable-pagination");
+			$('.dataTables_paginate > a').wrapInner('<span />');
+			$('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
+			$('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
+		} );
+	</script>
+</body>
