@@ -19,9 +19,9 @@ Amulya Aankul: https://towardsdatascience.com/running-jupyter-notebook-in-google
 
 To run the python code first follow the instruction in GitHub to install the pywFM and XGBoost library. 
 
-"pywFM," [Online]. Available: https://github.com/jfloff/pywFM.
+pywFM, https://github.com/jfloff/pywFM.
 
-"xgboost," [Online]. Available: https://github.com/dmlc/xgboost.
+xgboost, https://github.com/dmlc/xgboost.
 
 ## Code
 ### project.py
